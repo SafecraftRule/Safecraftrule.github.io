@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Sidebar -->
+    <div class="sidebar" id="sidebar">
+        <!-- Obere Buttons -->
+        <button class="toggle-btn" id="toggleBtn"><i class='bx bx-sidebar'></i></button>
+
+        <div class="sidebar-buttons">
+            <button>Home</button>
+        </div>
+
+        <!-- "Mein Account"-Button mit Abstand zum Rand -->
+        <div class="account-button-container">
+            <!-- "Mein Account"-Button mit Icon -->
+        <button class="account-button">
+            <div class="button-content">
+                <i class='bx bxs-user'></i>
+                Mein Account
+            </div>
+        </button>
+        </div>
+    </div>
+
+    <script>
+        const sidebar = document.getElementById("sidebar");
+        const toggleBtn = document.getElementById("toggleBtn");
+
+        toggleBtn.addEventListener("click", () => {
+            sidebar.classList.toggle("active");
+        });
+    </script>
+
+</body>
+</html>

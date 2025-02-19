@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');        
+        
+        /* Grundlayout der Sidebar */
+        .sidebar {
+            position: fixed;
+            left: -250px;
+            /* Startposition: außerhalb des Bildschirms */
+            top: 0;
+            width: 250px;
+            height: 100%;
+            background-color: #333;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: left 0.5s cubic-bezier(0.15, 0.85, 0.4, 1);
+            padding: 10px;
+            /* Abstand um den gesamten Inhalt */
+            box-sizing: border-box;
+        }
+
+        /* Sidebar sichtbar */
+        .sidebar.active {
+            left: 0;
+        }
+
+        /* Button zum Öffnen/Schließen */
+        .toggle-btn {
+            position: absolute;
+            top: 10px;
+            left: 260px;
+            background-color: transparent;
+            color: white;
+            font-size: 30px;
+            color: #C0C0C0;
+            border: none;
+            transition: 0.1s;
+            padding: 5px 10px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .toggle-btn:hover{
+            color: #818181;
+        }
+
+        /* Styling der Buttons in der Sidebar */
+        .sidebar-buttons {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .sidebar-buttons button{
+            background-color: transparent;
+            color: white;
+            border: none;
+            padding: 10px;
+            margin: 5px 0;
+            cursor: pointer;
+            transition: 0.3s;
+            border-radius: 5px;
+            font-size: 18px;
+            text-align: center;
+        }
+
+        .sidebar-buttons button:hover {
+            background-color: #3f3f3f;
+        }
+
+        /* "Mein Account"-Button unten mit Padding */
+        .account-button-container {
+            padding: 10px;
+            /* Abstand um den Button */
+        }
+
+        .account-button {
+            width: 100%;
+            background-color: transparent; /* Hintergrundfarbe bleibt */
+            color: white;
+            padding: 15px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.2s;
+            border-radius: 5px; /* Abgerundete Ecken */
+            text-align: center;
+            border: none;
+        }
+
+        .account-button:hover{
+            background-color: #3f3f3f;
+        }
+        
+        body{
+            background-color: #555555;
+            transition: 0.3s;
+        }
+
+        .button-content {
+            display: flex;
+            align-items: center; /* Vertikale Zentrierung */
+            justify-content: center; /* Horizontale Zentrierung */
+            gap: 20px; /* Abstand zwischen Icon und Text */
+        }
+        .button-content i {
+            font-size: 1.5em; /* Größe des Icons anpassen */
+        }
+
+        *{
+            font-weight: 600;
+            font-family: Rubik;
+        }
+        
