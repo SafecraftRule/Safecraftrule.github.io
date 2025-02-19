@@ -34,7 +34,7 @@
             font-size: 30px;
             color: #C0C0C0;
             border: none;
-            transition: 0.1s;
+            transition: 0.18s;
             padding: 5px 10px;
             cursor: pointer;
             border-radius: 5px;
@@ -64,6 +64,7 @@
         }
 
         .sidebar-buttons button:hover {
+            transform: scale(0.95);
             background-color: #3f3f3f;
         }
 
@@ -83,10 +84,11 @@
             transition: 0.2s;
             border-radius: 5px; /* Abgerundete Ecken */
             text-align: center;
-            border: none;
+            border: 1.9px solid #3f3f3f;
         }
 
         .account-button:hover{
+            transform: scale(0.99);
             background-color: #3f3f3f;
         }
         
