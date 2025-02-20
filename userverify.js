@@ -1,6 +1,6 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp} from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
-import {signInWithEmailAndPassword, getAuth} from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+import {getAuth, onAuthStateChanged} from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
 
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -19,19 +19,20 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
-// Login-Funktion
-document.getElementById('loginForm').addEventListener('submit', function(event) {
-    event.preventDefault();
 
-    const email = document.getElementById('email').value;
-    const password = document.getElementById('password').value;
-
-    signInWithEmailAndPassword(auth, email, password)
-        .then((userCredential) => {
-            // Erfolgreich eingeloggt
-            window.location.href = "index.html"; // Weiterleitung zur Hauptseite
-        })
-        .catch((error) => {
-            console.error("Fehler beim Login:", error.message);
-        });
+document.addEventListener("DOMContentLoaded", () => {
+    onAuthStateChanged(auth, (user) => {
+        if (user) {
+            if(!window.location.href.match("index.html")){
+                console.log("dawdawd")
+                window.location.href = "index.html"; // Nutzer ist eingeloggt
+            }
+        } else {
+            if(!window.location.href.match("login.html")){
+                console.log("dawdawd");
+                
+                window.location.href = "login.html"; 
+            } // Nutzer ist nicht eingeloggt
+        }
+    });
 });

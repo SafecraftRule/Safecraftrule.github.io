@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrierung</title>
+    <link rel="stylesheet" href="register.css">
+    <link rel="stylesheet" href="userverify.js">
+    <script src="register.js" type="module"></script>
+</head>
+<body>
+    <div class="login-container">
+        <h2>Registrieren</h2>
+        <form id="registerForm">
+            <input type="email" id="email" placeholder="E-Mail" required>
+            <input type="password" id="password" placeholder="Passwort" required>
+            <button type="submit">Registrieren</button>
+        </form>
+        <p>Schon ein Konto? <a href="login.html">Hier anmelden</a></p>
+        <p id="error-message" class="error"></p>
+    </div>
+</body>
+</html>

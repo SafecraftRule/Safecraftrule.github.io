@@ -1,6 +1,6 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp} from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
-import {signInWithEmailAndPassword, getAuth} from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+import {signOut, getAuth} from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
 
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -19,19 +19,16 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
-// Login-Funktion
-document.getElementById('loginForm').addEventListener('submit', function(event) {
-    event.preventDefault();
 
-    const email = document.getElementById('email').value;
-    const password = document.getElementById('password').value;
+//Buttons
+const logoutbtn = document.getElementById("logoutbtn");
 
-    signInWithEmailAndPassword(auth, email, password)
-        .then((userCredential) => {
-            // Erfolgreich eingeloggt
-            window.location.href = "index.html"; // Weiterleitung zur Hauptseite
-        })
-        .catch((error) => {
-            console.error("Fehler beim Login:", error.message);
-        });
+logoutbtn.addEventListener("click", function(){
+    signOut(auth)
+    .then(() => {
+        window.location.href = "login.html"; // Weiterleitung zur Login-Seite
+    })
+    .catch((error) => {
+        console.error("Fehler beim Abmelden:", error);
+    });
 });
